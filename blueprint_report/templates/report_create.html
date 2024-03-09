@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание отчёта</title>
+     <link href = "{{url_for('static', filename = 'style1.css')}}"
+          rel = "stylesheet" type = "text/css">
+</head>
+<body>
+    <header>
+    <div class="left-menu">
+      <ul class="menu">
+        <li class="dropdown">
+          <a href="#"><img src="../static/pngegg-2.png" class="logo"></a>
+          <div class="dropdown-content">
+              <a href="{{url_for('bp_query.query_index')}}" > Запросы для кинотеатра </a>
+              {% if user != 'ordinary'%}
+              <a href="{{url_for('bp_report.start_report')}}"> Работа с отчетами</a>
+              {% endif %}
+
+          </div>
+        </li>
+      </ul>
+    </div>
+        <center>
+        <div class="little-logo-text">
+            Афиша.ru
+        </div>
+        </center>
+     <div class="right-menu">
+      <ul class="menu">
+        <li class="dropdown">
+          <a href="#"><img src="../static/lk.png" class="logo"></a>
+          <div class="dropdown-content">
+               <a href="{{url_for('auth_bp.lk_index')}}">Кабинет</a>
+                <a href="{{url_for('bp_query.query_exit_index')}}">ВЫХОД</a>
+
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+        <section class="body">
+            <div class="large-text-2">
+            <h3 class="title">
+                Создание отчета
+            </h3>
+            </div>
+            <form action="" method="POST">
+                <center>
+                    <label class="auth-form__lable">Введите месяц:</label>
+                    <input type="number" name = input_month placeholder = "Введите месяц" class="auth-form__input">
+                    <br/>
+                    <br/>
+                    <label class="auth-form__lable">Введите год:</label>
+                    <input type="number" name = input_year placeholder = "Введите год" class="auth-form__input">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <input type="submit" value="Создать" class="auth-form__submit">
+                </center>
+            </form>
+        </section>
+        <div class="vertical-spacing"></div>
+        <center><button type="button" value="Вернуться назад" onclick="history.back()" class="button">Вернуться назад</button></center>
+</body>
+</html>

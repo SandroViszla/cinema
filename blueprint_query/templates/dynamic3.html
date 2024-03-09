@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dynamic_page</title>
+    <link href = "{{url_for('static', filename = 'style1.css')}}"
+          rel = "stylesheet" type = "text/css">
+</head>
+<body>
+<center>
+    <header class="rectangle text_center"><h1>{{prod_title}}</h1></header>
+    <p>
+        <table align=center width=60% cellspacing=5 border=5 bordercolor=#fdcf85 bgcolor=#f8f8ff>
+            <tr class="tab_title">
+                <td width=30% bgcolor=#ffc0cb><strong>Номер фильма</strong></td>
+                <td width=30% bgcolor=#ffc0cb><strong>Фильм</strong></td>
+                <td width=30% bgcolor=#ffc0cb><strong>Дата сеанса</strong></td>
+            </tr>
+        {% for session in sessions %}
+            <tr>
+                <td width=30%>{{session['id']}}</td>
+                <td width=30%>{{session['movie']}}</td>
+                <td width=30%>{{session['Date']}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    <form>
+        <br><br>
+        <button type="button" value="Вернуться назад" onclick="history.back()" class="button">Назад</button>
+    </form>
+    </p>
+</center>
+
+</body>
+</html>

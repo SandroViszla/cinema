@@ -1,0 +1,1 @@
+select * from rk6_sinema.tickets_sold_report where order_year = '$in_year' and order_month = '$in_month'

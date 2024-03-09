@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href = "{{url_for('static', filename = 'style1.css')}}"
+          rel = "stylesheet" type = "text/css">
+    <title>Существующие отчеты</title>
+</head>
+<body>
+<center>
+<header>
+    <h1>Отчет</h1>
+</header>
+<main>
+    <h3>{{prod_title}}</h3>
+   <table>
+    <tr>
+        {% if products and products[0] and 'order_year' in products[0].keys() %}
+        <th>Год</th>
+        {% endif %}
+        {% if products and products[0] and 'order_month' in products[0].keys() %}
+        <th>Месяц</th>
+        {% endif %}
+        {% if products and products[0] and 'product_id' in products[0].keys() %}
+        <th>Идентификатор продукта</th>
+        {% endif %}
+        {% if products and products[0] and 'quantity' in products[0].keys() %}
+        <th>Количество</th>
+        {% endif %}
+        {% if products and products[0] and 'cost' in products[0].keys() %}
+        <th>Стоимость</th>
+        {% endif %}
+    </tr>
+    {% if products %}
+        {% for product in products %}
+        <tr>
+            {% if products[0] and 'order_year' in products[0].keys() %}
+            <td>{{product['order_year']}}</td>
+            {% endif %}
+            {% if products[0] and 'order_month' in products[0].keys() %}
+            <td>{{product['order_month']}}</td>
+            {% endif %}
+            {% if products[0] and 'product_id' in products[0].keys() %}
+            <td>{{product['product_id']}}</td>
+            {% endif %}
+            {% if products[0] and 'quantity' in products[0].keys() %}
+            <td>{{product['quantity']}}</td>
+            {% endif %}
+            {% if products[0] and 'cost' in products[0].keys() %}
+            <td>{{product['cost']}}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    {% else %}
+        <tr>
+            <td colspan="5">Нет данных</td>
+        </tr>
+    {% endif %}
+</table>
+
+    <br>
+    <form action="{{url_for('bp_report.check_reports')}}">
+        <input type="submit" class="button" value="Все">
+    </form>
+    <br>
+    <form action="{{url_for('bp_report.report')}}">
+        <input type="submit" class="button" value="Назад">
+    </form>
+
+
+</main>
+</center>>
+</body>
+</html>

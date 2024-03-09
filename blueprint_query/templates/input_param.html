@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск по категории и цене</title>
+    <link href = "{{url_for('static', filename = 'style1.css')}}"
+          rel = "stylesheet" type = "text/css">
+</head>
+<body>
+<center>
+    <header class="rectangle text_center"><h1>Введите параметры для поиска</h1></header>
+    <br><br>
+    <form action="" method="post">
+        <label for="date"><strong>Дата</strong></label>
+        <input type="text" name="date" id="date">
+        <br><br>
+        <div>
+            <button type="submit" class="button" value="Отправить" >Отправить</button>
+            <button type="reset" class="button" value="Очистить">Очистить</button>
+            <button type="button" value="Вернуться назад" onclick="history.back()" class="button">Вернуться назад</button>
+        </div>
+    </form>
+</center>
+</body>
+</html>

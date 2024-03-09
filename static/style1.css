@@ -1,0 +1,180 @@
+@import url("style2.css");
+
+    body {
+        background-color: #333;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      padding: 15px;
+      color: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid #fff;
+    }
+    .logo {
+      max-width: 50px; /* Максимальная ширина изображения будет 100% от родительского контейнера */
+      height: auto; /* Высота будет автоматически рассчитана, чтобы сохранить соотношение сторон */
+      display: block; /* Убирает дополнительное пространство под изображением */
+    }
+
+    .menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .menu li {
+      margin-right: 20px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .menu a:hover {
+      color: #ffcc00;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: #fff;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.3s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu li {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+    .little-logo-text {
+            font-size: 300%; /* Регулируйте размер шрифта по необходимости */
+            margin-left: 10%; /* Регулируйте отступ слева по необходимости */
+            color: white;
+         font-family: Ayuthaya;
+    }
+
+
+    .large-text {
+            font-size: 300%; /* Регулируйте размер шрифта по необходимости */
+            margin-left: 10%; /* Регулируйте отступ слева по необходимости */
+            color: white;
+         font-family: Ayuthaya;
+        text-decoration: underline;
+    }
+
+    .movie-info-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 60%;
+        }
+
+    .large-text-1{
+         font-size: 250%; /* Регулируйте размер шрифта по необходимости */
+            margin-left: 12%; /* Регулируйте отступ слева по необходимости */
+            color: white;
+         font-family: Ayuthaya;
+    }
+
+
+    .content-container {
+            display: flex;
+            justify-content: space-between; /* Равномерное распределение между элементами */
+            align-items: center; /* Выравнивание элементов по вертикали */
+        }
+
+    .text-left {
+    margin-left: 12%;
+    max-width: 60%; /* Максимальная ширина текста */
+    color: white;
+    font-size: 180%; /* Размер шрифта - регулируйте по необходимости */
+    line-height: 1.5; /* Междустрочный интервал - регулируйте по необходимости */
+    word-wrap: break-word; /* Перенос слов на новую строку при необходимости */
+    }
+
+
+    .rounded-image-right {
+            border-radius: 5%;
+            max-width: 40%; /* Максимальная ширина изображения */
+            height: auto;
+            margin-right: 8%;
+    }
+    .vertical-spacing {
+            margin-bottom: 10%; /* Задайте необходимую величину отступа вниз */
+        }
+    .movie-info-container-2 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 60%;
+        margin-right: -16%;
+        }
+
+    .large-text-2 {
+            font-size: 250%;
+            color: white;
+            font-family: Ayuthaya;
+            margin-left: 10%;
+        }
+
+    .text-right {
+            max-width: 60%;
+            color: white;
+            font-size: 180%;
+            line-height: 1.5;
+            word-wrap: break-word;
+         text-align: right; /* Добавил выравнивание текста справа */
+        }
+
+    .rounded-image-left {
+            border-radius: 5%;
+            max-width: 25%;
+            height: auto;
+            margin-left: 8%;
+    }
+
+    .table-report, .td-report {
+    border: 1px solid black; /* Устанавливает черную границу для таблицы и ячеек */
+    width: 20%; /* Устанавливает ширину таблицы */
+    text-align: center; /* Выравнивание текста по центру в ячейках */
+    color: white; /* Устанавливает белый цвет текста */
+  }
+
+

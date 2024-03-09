@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link href = "{{url_for('static', filename = 'style1.css')}}"
+          rel = "stylesheet" type = "text/css">
+    <title>Супермаркет</title>
+</head>
+<body>
+<center>
+<header>
+    <img src="../static/pngwing.png" align="left" class="logo">
+    <h1>Формирование отчета</h1>
+</header>
+<main>
+    <form action="" method=POST class="search_form">
+        <h3>Введите год:</h3>
+        <div class="input_form" style="justify-content: center">
+            <input type="text" name="in_date" id="in_date">
+        </div>
+        <h3>Введите месяц:</h3>
+        <div class="input_form" style="justify-content: center">
+            <input type="text" name="out_date" id="out_date">
+        </div>
+        <br>
+        <div class="buttons">
+            <input type="submit" class="button" value="Отправить">
+            <br>
+            <input type="reset" class="button" value="Очистить">
+        </div>
+    </form>
+    <br>
+    <br>
+    <form action="{{url_for('main_menu')}}">
+        <input type="submit" class="button" value="Вернуться в меню">
+    </form>
+    {% if error %}
+    <p class=error><strong>Произошла ошибка:</strong> {{ error }}</p>
+    {% endif %}
+  </main>
+</center>
+</body>
+</html>

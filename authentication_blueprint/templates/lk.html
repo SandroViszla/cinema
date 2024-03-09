@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет</title>
+    <link href = "{{url_for('static', filename = 'style1.css')}}"
+          rel = "stylesheet" type = "text/css">
+</head>
+<body>
+<center>
+    <header>
+    <h1>Личный кабинет</h1>
+    </header><br>
+    <h3>Вы авторизированы</h3>
+    <br><br>
+    <img src="../static/good.png" style="width: 200px; height: 200px;"><br>
+    {% if user_group %}
+    <h3>права: {{user_group}}</h3>
+        {% endif %}
+    <button class="custom-button"><a href = "/exit">Выйти</a></button>
+    <button type="button" value="Вернуться назад" onclick="history.back()" class="button">Вернуться назад</button>
+
+</center>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню кинотеатра</title>
+      <link href = "{{url_for('static', filename = 'style1.css')}}"
+          rel = "stylesheet" type = "text/css">
+</head>
+<body>
+    <header>
+    <div class="left-menu">
+      <ul class="menu">
+        <li class="dropdown">
+          <a href="#"><img src="../static/pngegg-2.png" class="logo"></a>
+          <div class="dropdown-content">
+              {% if user != 'ordinary'%}
+              <a href="{{url_for('bp_query.query_index')}}" > Запросы для кинотеатра </a>
+              <a href="{{url_for('bp_report.start_report')}}"> Работа с отчетами</a>
+              {% endif %}
+              <a href="{{url_for('bp_basket.start')}}" > Basket </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+        <center>
+        <div class="little-logo-text">
+            Афиша.ru
+        </div>
+        </center>
+     <div class="right-menu">
+      <ul class="menu">
+        <li class="dropdown">
+          <a href="#"><img src="../static/lk.png" class="logo"></a>
+          <div class="dropdown-content">
+               <a href="{{url_for('auth_bp.lk_index')}}">Кабинет</a>
+                <a href="{{url_for('bp_query.query_exit_index')}}">ВЫХОД</a>
+
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+    <div class="large-text">
+        <h1>Сегодя в кино</h1>
+    </div>
+     <div class="content-container">
+             <div class="movie-info-container">
+                <div class="large-text-1">
+                    <h2>Бэтмэн</h2>
+                </div>
+                 <div class="text-left">
+                     <p>После двух лет поисков правосудия на улицах Готэма для своих сограждан Бэтмен становится олицетворением беспощадного возмездия. Когда в городе происходит серия жестоких нападений на представителей элиты, загадочные улики приводят Брюса Уэйна в самые темные закоулки преступного мира, где он встречает Женщину-Кошку, Пингвина, Кармайна Фальконе и Загадочника. Теперь под прицелом оказывается сам Бэтмен, которому предстоит отличить друга от врага и восстановить справедливость во имя Готэма.</p>
+                 </div>
+             </div>
+        <img src="static/bat.jpg" alt="Скругленное изображение" class="rounded-image-right">
+    </div>
+    <div class="vertical-spacing"></div>
+        <div class="content-container">
+        <img src="static/brat.jpg" alt="Скругленное изображение" class="rounded-image-left">
+        <div class="movie-info-container-2">
+            <div class="large-text-2">
+                <h2>Брат 2</h2>
+            </div>
+            <div class="text-right">
+                <p>Второй фильм о культовом русском герое 90-х – Даниле Багрове.
+Участвуя в программе на телевидении, Данила Багров встречает своих друзей по Чечне. Одного из них внезапно убивают. Данила знает, что у друга были неприятности из-за брата-хоккеиста в Америке. Данила должен разобраться. Теперь его фотография ходит по рукам русской и американской мафии. Новоявленные «Аль Капоне» понимают, что нарвались на профессионала…</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

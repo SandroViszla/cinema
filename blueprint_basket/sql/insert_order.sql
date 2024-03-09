@@ -1,0 +1,1 @@
+insert rk6_sinema.zakaz values(NULL, '$user_date', '$user_id')

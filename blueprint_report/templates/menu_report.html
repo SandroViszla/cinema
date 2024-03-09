@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню отчётов</title>
+     <link href = "{{url_for('static', filename = 'style1.css')}}"
+          rel = "stylesheet" type = "text/css">
+</head>
+<body>
+        <header>
+    <div class="left-menu">
+      <ul class="menu">
+        <li class="dropdown">
+          <a href="#"><img src="../static/pngegg-2.png" class="logo"></a>
+          <div class="dropdown-content">
+              <a href="{{url_for('bp_query.query_index')}}" > Запросы для кинотеатра </a>
+              {% if user != 'ordinary'%}
+              <a href="{{url_for('bp_report.start_report')}}"> Работа с отчетами</a>
+              {% endif %}
+
+          </div>
+        </li>
+      </ul>
+    </div>
+        <center>
+        <div class="little-logo-text">
+            Афиша.ru
+        </div>
+        </center>
+     <div class="right-menu">
+      <ul class="menu">
+        <li class="dropdown">
+          <a href="#"><img src="../static/lk.png" class="logo"></a>
+          <div class="dropdown-content">
+               <a href="{{url_for('auth_bp.lk_index')}}">Кабинет</a>
+                <a href="{{url_for('bp_query.query_exit_index')}}">ВЫХОД</a>
+
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+        <div class="large-text-2">
+            <h3 class="title">
+                Меню отчётов
+            </h3>
+        </div>
+            <br> <br>
+            <center>
+                <div class="categories">
+                    {% for report in report_list %}
+                    <form action='' method = 'POST'>
+                        <label for="create_rep" class="auth-form__lable">{{report['rep_name']}}</label>
+                        {% if user != 'manager2'%}
+                        <input type="submit" name="create_rep" id="create_rep" value="Создать отчёт" class="auth-form__submit">
+                        {% endif %}
+                        {% if user != 'manager'%}
+                        <input type="submit" name="view_rep" id="view_rep" value="Просмотреть отчёт" class="auth-form__submit">
+                        {% endif %}
+                        <br/>
+                        <input type="hidden" name="rep_id" value="{{report['rep_id']}}">
+                        <br/>
+                    </form>
+                    {% endfor %}
+                </div>
+            </center>
+        <div class="vertical-spacing"></div>
+        <center>
+            <button type="button" value="Вернуться назад" onclick="history.back()" class="button">Вернуться назад</button>
+
+        </center>
+</body>
+</html>
+

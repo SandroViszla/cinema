@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Nice dark sign in form</title>
+<link href = "{{url_for('static', filename = 'style.css')}}"
+          rel = "stylesheet" type = "text/css">
+</head>
+<body>
+  <h1>Авторизация</h1>
+<div id="wrapper">
+ <form id="signin" action = "" method = "POST">
+      <input type = "text" name = "login" id = "login" placeholder="username"/>
+     <input type = "text" name = "password" id = "password" placeholder="password"/>
+     {% if error_message %}
+            <p style="">{{ error_message }}</p>
+        {% else %}
+            <br><br><br>
+        {% endif %}
+     <button type = "submit" class = "button" value = "Авторизироваться">&#xf0da;</button>
+
+ </form>
+</div>
+</body>
+</html>

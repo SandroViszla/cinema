@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание отчёта</title>
+     <link href = "{{url_for('static', filename = 'style1.css')}}"
+          rel = "stylesheet" type = "text/css">
+</head>
+<body>
+    <div>
+        <section class="body">
+            <form action="", method ="POST">
+                <h1 class="title">
+                    Меню отчётов
+                </h1>
+                <center>
+                    <label class="auth-form__lable">Введите месяц:</label>
+                    <input type="number" name = input_month placeholder = "Введите месяц" class="auth-form__input">
+                    <label class="auth-form__lable">Введите год:</label>
+                    <input type="number" name = input_year placeholder = "Введите год" class="auth-form__input">
+                    <br/>
+                    <br/>
+                    <input type="submit" value="Посмотреть" class="auth-form__submit">
+
+                </center>
+            </form>
+        </section>
+        <div class="vertical-spacing"></div>
+        <center>            <button type="button" value="Вернуться назад" onclick="history.back()" class="button">Вернуться назад</button>
+</center>
+    </div>
+</body>
+</html>

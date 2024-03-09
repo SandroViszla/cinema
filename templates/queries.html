@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Запросы</title>
+    <link href = "{{url_for('static', filename = 'style1.css')}}"
+          rel = "stylesheet" type = "text/css">
+</head>
+<body>
+    <header>
+    <div class="left-menu">
+      <ul class="menu">
+        <li class="dropdown">
+          <a href="#"><img src="../static/pngegg-2.png" class="logo"></a>
+          <div class="dropdown-content">
+              <a href="{{url_for('bp_query.query_index')}}" > Запросы для кинотеатра </a>
+              {% if user != 'ordinary'%}
+              <a href="{{url_for('bp_report.start_report')}}"> Работа с отчетами</a>
+              {% endif %}
+
+          </div>
+        </li>
+      </ul>
+    </div>
+        <center>
+        <div class="little-logo-text">
+            Афиша.ru
+        </div>
+        </center>
+     <div class="right-menu">
+      <ul class="menu">
+        <li class="dropdown">
+          <a href="#"><img src="../static/lk.png" class="logo"></a>
+          <div class="dropdown-content">
+               <a href="{{url_for('auth_bp.lk_index')}}">Кабинет</a>
+                <a href="{{url_for('bp_query.query_exit_index')}}">ВЫХОД</a>
+
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+        <div class="text-box">
+            <a href="{{url_for('bp_query.query_index1')}}" class="btn btn-white btn-animate"> Запрос для вывода сеансов на определённую дату </a>
+        </div>
+        <div class="text-box">
+             <a href="{{url_for('bp_query.query_index2')}}" class="btn btn-white btn-animate"> Запрос о выручке по году и месяцу </a>
+        </div>
+        <div class="text-box">
+            <a href="{{url_for('bp_query.query_index3')}}" class="btn btn-white btn-animate"> Запрос о фильмах без проданных билетов </a>
+        </div>
+        <div class="vertical-spacing"></div>
+        <center>
+            <button type="button" value=" " onclick="history.back()" class="button">Выход</button>
+        </center>
+
+</body>
+</html>

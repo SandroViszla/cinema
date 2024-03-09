@@ -1,0 +1,27 @@
+{% macro render_item(item, idtikets, show_form = False, show_amount = False) %}
+
+<div style = "border-style: solid; border-color: black; margin:5px;">
+    <p>
+        <span>Название</span>
+        <span style="color:blue"> {{item['movie_name']}}</span>
+        <span>Цена</span>
+        <span style="color:blue"> {{item['price']}}</span>
+        <span>Ряд</span>
+        <span style="color:blue"> {{item['seat']}}</span>
+        <span>Место</span>
+        <span style="color:blue"> {{item['row']}}</span>
+    </p>
+
+    {% if show_form %}
+    <form method = "post" action="">
+        <input style="color:red" type="submit" name="send" value = "Купить">
+        <input type="hidden" value = "{{idtikets}}" name="idtikets" id="{{idtikets}}">
+    </form>
+    {% endif %}
+
+    {% if show_amount %}
+    <span>Количество</span>
+    <span style="color:blue"> {{item['amount']}}</span>
+    {% endif %}
+</div>
+{% endmacro %}

@@ -1,0 +1,1 @@
+select max(id_zakaz) as max_id from supermarket.zakaz where user_id = '$user_id'

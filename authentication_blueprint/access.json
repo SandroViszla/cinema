@@ -1,0 +1,7 @@
+{
+  "admin": ["bp_query", "bp_report", "bp_basket"],
+  "manager": ["bp_report", "bp_query", "bp_basket"],
+  "ordinary": ["bp_query", "bp_basket"]
+
+}
+
